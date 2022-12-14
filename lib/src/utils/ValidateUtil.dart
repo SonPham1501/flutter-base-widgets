@@ -72,8 +72,7 @@ class ValidateUtil {
   }
 
   static InputOptionObject validateEmail(String email) {
-
-     var  option = InputOptionObject();
+    var  option = InputOptionObject();
     if (email.trim().isEmpty) {
       option.isError = true;
       option.message = "Chưa nhập email!";
@@ -246,8 +245,9 @@ class ValidateUtil {
     }
     return option;
   }
-   static bool requiredPassword(String value) {
-    var pattern =r'^(?=.*?[0-9]).{6,}$';
+
+  static bool requiredPassword(String value) {
+    var pattern = r'^(?=.*?[0-9]).{6,}$';
 
     // var pattern =
     //     '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}\$';
@@ -313,8 +313,7 @@ class ValidateUtil {
     return option;
   }
 
-  static InputOptionObject validateNotEmpty(
-      String fullName, InputOptionObject option) {
+  static InputOptionObject validateNotEmpty(String fullName, InputOptionObject option) {
     if (fullName.trim().isEmpty) {
       option.isError = true;
       option.message = "Trường này là bắt buộc!";
@@ -324,9 +323,7 @@ class ValidateUtil {
     return option;
   }
 
-  static InputOptionObject validateNormalFeild(
-      String fullName, InputOptionObject option, String errorName,
-      {String? mess}) {
+  static InputOptionObject validateNormalFeild(String fullName, InputOptionObject option, String errorName, {String? mess}) {
     if (fullName.trim().isEmpty) {
       option.isError = true;
       option.message = mess ?? "$errorName không được bỏ trống";
@@ -393,8 +390,7 @@ class ValidateUtil {
     if (url.isEmpty) {
       return false;
     }
-    final RegExp pattern = RegExp(
-        r'^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$');
+    final RegExp pattern = RegExp(r'^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$');
     final bool match = pattern.hasMatch(url);
 
     return match;
